@@ -64,9 +64,9 @@ Mortgage servicing software handles the complex **post-origination loan lifecycl
 
 While enterprise GSE-compliant mortgage servicing (Fannie Mae/Freddie Mac) requires commercial platforms due to legal audit requirements, open-source projects provide foundational components for **general loan accounting, amortization math, financial ledgers, and borrower portals**.
 
-*The table below lists top open-source repositories, sorted by GitHub star count (descending):*
+*The table below lists top open-source repositories, sorted by GitHub Stars_Count (descending):*
 
-| Project & Repository 🛠️ | GitHub Star Badge 🌟 | Core Tech Stack 💻 | Description & Servicing Use-Cases 📑 |
+| Project & Repository 🛠️ | GitHub Stars_Badge 🌟 | Core Tech Stack 💻 | Description & Servicing Use-Cases 📑 |
 | :--- | :--- | :--- | :--- |
 | **[Kill Bill](https://github.com/killbill/killbill)** | [![Stars](https://img.shields.io/github/stars/killbill/killbill?style=social&color=white)](https://github.com/killbill/killbill/stargazers) | Java, OSGi, SQL | Open-source subscription billing, payment processing engine, and automated recurring repayment ledger. |
 | **[Formance Ledger](https://github.com/formancehq/ledger)** | [![Stars](https://img.shields.io/github/stars/formancehq/ledger?style=social&color=white)](https://github.com/formancehq/ledger/stargazers) | Go, PostgreSQL | Programmable financial ledger built for complex payment flows, multi-account loan balances, and payment waterfalls. |
