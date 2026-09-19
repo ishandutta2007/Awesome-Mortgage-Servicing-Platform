@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%">
+  <defs>
+    <!-- Background Dark Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Text Gradient -->
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <style>
+    /* Dynamic Animated Background Elements */
+    @keyframes waveMove1 {
+      0% { transform: translateX(0px); }
+      50% { transform: translateX(-60px) translateY(5px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes waveMove2 {
+      0% { transform: translateX(0px); }
+      50% { transform: translateX(40px) translateY(-8px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes pulseNode {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.4); opacity: 1; }
+    }
+    @keyframes lineFlow {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    .wave1 {
+      animation: waveMove1 12s ease-in-out infinite;
+      opacity: 0.25;
+    }
+    .wave2 {
+      animation: waveMove2 9s ease-in-out infinite;
+      opacity: 0.35;
+    }
+    .pulse-dot {
+      animation: pulseNode 3s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .flow-line {
+      stroke-dasharray: 20, 10;
+      animation: lineFlow 15s linear infinite;
+    }
+    
+    /* Typography formatting for foreground readability */
+    .banner-title {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      fill: url(#text-grad);
+      letter-spacing: -0.5px;
+    }
+    .banner-subtitle {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 19px;
+      fill: #e2e8f0;
+      letter-spacing: 0.2px;
+    }
+    .banner-tag {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #38bdf8;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  </style>
+
+  <!-- Base Layer: Solid Gradient Background -->
+  <rect width="1200" height="300" fill="url(#bg-grad)" rx="12" />
+
+  <!-- Layer 2: Grid Overlay -->
+  <rect width="1200" height="300" fill="url(#grid)" rx="12" />
+
+  <!-- Layer 3: Dynamic Animated Visual Elements (Background Flow Shapes) -->
+  <g class="wave1">
+    <path d="M-100 220 Q 200 120 500 240 T 1100 180 T 1400 260 L 1400 300 L -100 300 Z" fill="#6366f1" />
+  </g>
+
+  <g class="wave2">
+    <path d="M-100 260 Q 300 180 700 250 T 1300 200 L 1300 300 L -100 300 Z" fill="#0284c7" />
+  </g>
+
+  <!-- Animated Data Flow Line & Nodes (Financial Trend Visual) -->
+  <path class="flow-line" d="M 50 230 C 250 150, 450 260, 650 170 C 850 80, 1050 210, 1150 140" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-opacity="0.6" />
+  
+  <circle cx="650" cy="170" r="5" fill="#38bdf8" class="pulse-dot" />
+  <circle cx="850" cy="115" r="4" fill="#818cf8" class="pulse-dot" style="animation-delay: 1s;" />
+  <circle cx="1050" cy="210" r="5" fill="#c084fc" class="pulse-dot" style="animation-delay: 2s;" />
+
+  <!-- Layer 4: Foreground Content Container (Ensures Title/Subtitle Are Crisp and Never Obscured) -->
+  <g transform="translate(60, 0)">
+    <!-- Decorative Icon / Shield Container -->
+    <g transform="translate(0, 50)">
+      <rect x="0" y="0" width="54" height="54" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+      <!-- Building/Mortgage Icon -->
+      <path d="M 27 14 L 12 26 L 16 26 L 16 40 L 38 40 L 38 26 L 42 26 Z M 23 34 L 23 27 L 31 27 L 31 34 Z" fill="#38bdf8" />
+    </g>
+
+    <!-- Tagline Badge -->
+    <text x="72" y="72" class="banner-tag">CURATED ECOSYSTEM &amp; RESEARCH</text>
+
+    <!-- Main Title -->
+    <text x="0" y="145" class="banner-title" filter="url(#glow)">Awesome Mortgage Servicing Platform</text>
+    <text x="0" y="145" class="banner-title">Awesome Mortgage Servicing Platform</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="188" class="banner-subtitle">Enterprise SaaS Products, Open-Source Loan Engines &amp; Servicing Infrastructure</text>
+
+    <!-- Category Pill Highlights -->
+    <g transform="translate(0, 215)">
+      <!-- Pill 1 -->
+      <rect x="0" y="0" width="160" height="28" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5" />
+      <text x="16" y="18" font-family="system-ui" font-size="12" font-weight="600" fill="#93c5fd">🏦 Loan Servicing</text>
+
+      <!-- Pill 2 -->
+      <rect x="172" y="0" width="165" height="28" rx="14" fill="#1e293b" stroke="#818cf8" stroke-width="1" stroke-opacity="0.5" />
+      <text x="188" y="18" font-family="system-ui" font-size="12" font-weight="600" fill="#c7d2fe">📑 Escrow &amp; Accounting</text>
+
+      <!-- Pill 3 -->
+      <rect x="349" y="0" width="175" height="28" rx="14" fill="#1e293b" stroke="#c084fc" stroke-width="1" stroke-opacity="0.5" />
+      <text x="365" y="18" font-family="system-ui" font-size="12" font-weight="600" fill="#e9d5ff">📈 Investor Reporting</text>
+
+      <!-- Pill 4 -->
+      <rect x="536" y="0" width="165" height="28" rx="14" fill="#1e293b" stroke="#34d399" stroke-width="1" stroke-opacity="0.5" />
+      <text x="552" y="18" font-family="system-ui" font-size="12" font-weight="600" fill="#a7f3d0">⚙️ Open-Source Engines</text>
+    </g>
+  </g>
+</svg>
